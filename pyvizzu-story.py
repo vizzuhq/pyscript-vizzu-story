@@ -4,7 +4,7 @@ from textwrap import dedent
 
 from pyscript import Plugin, js
 from pyodide.ffi import to_js
-from js import Object, Vizzu
+from js import Object
 
 import json
 
@@ -15,7 +15,6 @@ js.console.warn(
 
 class MyPlugin(Plugin):
     def configure(self, config):
-
         js.console.log(f"configuration received: {config}")
 
     def afterStartup(self, runtime):
@@ -27,7 +26,6 @@ plugin = MyPlugin("pyVizzuStory")
 class PyVizzu:
     def __init__(self, element):
         self.element = element
-        self.chart = Vizzu.default.new(self.element)
 
     def connect(self):
         print("CONNECTED----->")
