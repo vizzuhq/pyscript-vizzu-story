@@ -15,6 +15,7 @@ js.console.warn(
 
 class MyPlugin(Plugin):
     def configure(self, config):
+
         js.console.log(f"configuration received: {config}")
 
     def afterStartup(self, runtime):
@@ -31,17 +32,11 @@ class PyVizzu:
     def connect(self):
         print("CONNECTED----->")
         self.html = dedent(self.element.innerHTML)
-
-        animations = self.html.split('----')
-        for anim in animations:
-            print(f"Animations {anim}")
-            json_anim = json.loads(anim)
-            self.animate(json_anim)
-
-           
-        self.element.innerHTML = ""
+        story = self.html
+        json_story = json.loads(story)
+        js_story = to_js(json_story, dict_converter=Object.fromEntries)
+        self.element.innerHTML = "<vizzu-player controller></vizzu-player>"
+        self.element.firstElementChild.slides = js_story;
         self.element.style.display = "block"
         print(self.html)
 
-    def animate(self, target):
-        self.chart.animate(to_js(target, dict_converter=Object.fromEntries))

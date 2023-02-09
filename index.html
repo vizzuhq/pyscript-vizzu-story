@@ -4,38 +4,43 @@
 <head>
     <title>vizzu-plugin</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <link rel="stylesheet" href="pyvizzu-story.css"/>
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-      <script>
-	(async () => { Vizzu = await import('https://cdn.jsdelivr.net/npm/vizzu@latest/dist/vizzu.min.js') })()
-  </script>
+    <script>
+	(async () => { Vizzu = await import('https://cdn.jsdelivr.net/npm/vizzu-story@latest/dist/vizzu-story.min.js') })()
+    </script>
 </head>
 <body>
     <py-config src="./pyscript.toml"></py-config>
     
     <py-tutor>
-        <py-vizzu id="myVizzu" style="display: none">
+        <py-vizzu>
             {
-                "data" : {
-                    "series": [
-                        { "name": "Foo", "values": ["Alice", "Bob", "Ted"] },
-                        { "name": "Bar", "values": [15, 32, 12] },
-                        { "name": "Baz", "values": [5, 3, 2] }
-                    ]
+                "data": {
+                  "series": [
+                    { "name": "Foo", "values": ["Alice", "Bob", "Ted"] },
+                    { "name": "Bar", "values": [15, 32, 12] },
+                    { "name": "Baz", "values": [5, 3, 2] }
+                  ]
                 },
-                "config": {
-                    "x": "Foo",
-                    "y": "Bar"
-                }
-            }
-            ---- 
-            {
-                "color": "Foo",
-                "x": "Baz",
-                "geometry": "circle"
+                "slides": [
+                  {
+                    "config": {
+                      "x": "Foo",
+                      "y": "Bar"
+                    }
+                  },
+                  {
+                    "config": {
+                      "color": "Foo",
+                      "x": "Baz", 
+                      "geometry": "circle" 
+                    }
+                  }
+                ]
             }
         </py-vizzu>
     </py-tutor>
 
-			
 </body>
 </html>
