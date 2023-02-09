@@ -1,0 +1,11 @@
+name = "vizzu-plugin"
+description = "Vizzu Plugin Experiment"
+type = "app"
+author_name = "Fabio Pliger"
+author_email = "fabio@anaconda.com"
+version = "2023.1.1"
+
+plugins = [
+  "https://pyscriptapps.com/7589ccb7-f838-4034-abea-5550f0e8d949/148bf009-3eca-42d8-bcc0-8089e2aae617/latest/py_tutor.py",
+  "./pyvizzu-story.py"
+]
