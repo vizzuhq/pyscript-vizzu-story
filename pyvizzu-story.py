@@ -21,9 +21,9 @@ class MyPlugin(Plugin):
     def afterStartup(self, runtime):
         js.console.log(f"runtime received: {runtime}")
 
-plugin = MyPlugin("pyVizzu")
+plugin = MyPlugin("pyVizzuStory")
 
-@plugin.register_custom_element("py-vizzu")
+@plugin.register_custom_element("py-vizzu-story")
 class PyVizzu:
     def __init__(self, element):
         self.element = element
