@@ -1,4 +1,5 @@
 # pyvizzu-story
+
 PyScript plugin for vizzu-story
 
-[live example](https://simzer.github.io/pyvizzu-story/)
+[live demo](https://vizzuhq.github.io/pyscript-vizzu-story/)
